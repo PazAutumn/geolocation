@@ -7,8 +7,8 @@
   <meta name="author" content="">
 	<meta name="keywords" content="HTML5, CSS3, javascript"/>
 	<title>Find me</title>
-	<!-- Materialize -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<!-- Materialize
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">-->
 	<!-- Hoja de estilos -->
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -16,19 +16,19 @@
 
 
 <body>
+  <div class="mapa">
+    <img class="responsive-image img-shape" src="assets/img/shape.png"><input type="text" placeholder="Ingrese su punto de partida">
+    <img class="responsive-image img-shape" src="assets/img/shape2.png"><input type="text" placeholder="Ingrese su destino">
+    <button class="btn" id="encuentrame">Encuentrame</button>
+  </div>
 	<div id="map"></div>
-	<button id="encuentrame">Encuentrame</button>
+	
 
 
-
-
-
-
-
-	<!-- jQuery 
+	<!-- jQuery
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>-->
 	<!-- Google Maps -->
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWwZMxVhqmpk3Gtrpphv38yx9jFyRM2Js&callback=initMap"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWwZMxVhqmpk3Gtrpphv38yx9jFyRM2Js&callback=initMap&libraries=places"></script>
 		<!-- Link js -->
   <script src="assets/js/app.js"></script>
   <!-- Link Iconos
