@@ -20,31 +20,6 @@ function initMap() {
     new google.maps.places.Autocomplete(inputPartida);
     new google.maps.places.Autocomplete(inputDestino);
 
-    var directionsService = new google.maps.DirectionsService;
-    var directionsDisplay = new google.maps.DirectionsRenderer;
-
-    var calculateAndDisplayRoute = function(directionService, directionDisplay) {
-        directionsService.route({
-            origin: inputPartida.value,
-            destination: inputDestino.value,
-            travelMode: 'DRIVING'
-        }, function(response, status) {
-            if (status === 'OK') {
-                directionsDisplay.setDirections(response);
-            } else {
-                window.alert('No se encontró una ruta.');
-            }
-        });
-    }
-
-    directionsDisplay.setMap(map);
-
-    var trazarRuta = function() {
-        calculateAndDisplayRoute(directionsService, directionsDisplay);
-    }
-
-    document.getElementById('trazar-ruta').addEventListener('click', trazarRuta);
-
 }
 
 document.getElementById('encuentrame').addEventListener('click', buscar);
@@ -76,6 +51,34 @@ var success = function(position) {
     });
 
     miUbicacion.setMap(map);
+
+    var inputPartida = document.getElementById('punto-partida');
+    var inputDestino = document.getElementById('punto-destino');
+
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+
+    var calculateAndDisplayRoute = function(directionService, directionDisplay) {
+        directionsService.route({
+            origin: inputPartida.value,
+            destination: inputDestino.value,
+            travelMode: 'DRIVING'
+        }, function(response, status) {
+            if (status === 'OK') {
+                directionsDisplay.setDirections(response);
+            } else {
+                window.alert('No se encontró una ruta.');
+            }
+        });
+    }
+
+    directionsDisplay.setMap(map);
+
+    var trazarRuta = function() {
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+    }
+
+    document.getElementById('trazar-ruta').addEventListener('click', trazarRuta);
 }
 
 /*map.setZoom(18),
