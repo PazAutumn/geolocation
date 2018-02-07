@@ -28,29 +28,51 @@ var success = function(position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
 
+    var myLatlng = new google.maps.LatLng(latitude, longitude);
+    var mapOptions = {
+        zoom: 18,
+        center: myLatlng
+    }
+
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
     var miUbicacion = new google.maps.Marker({
         position: ({
             lat: latitude,
             lng: longitude
         }),
-        setMap: map
     });
 
-    /*
-    map.setZoom(18),
+    miUbicacion.setMap(map);
+
+    /*map.setZoom(18),
     map.setCenter({
         lat: latitude,
         lng: longitude
     })
-    */
+    
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+        var icons = {
+          parking: {
+            icon: iconBase + 'parking_lot_maps.png'
+          },
+          library: {
+            icon: iconBase + 'library_maps.png'
+          },
+          info: {
+            icon: iconBase + 'info-i_maps.png'
+          }
+        };*/
 
-    var map = new google.maps.Map(document.getElementById('map'), {
+
+    /*var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 18,
         center: ({
             lat: latitude,
             lng: longitude
-        })
-    })
+        }),
+        icon: iconBase
+    })*/
 }
 
 var error = function(error) {
