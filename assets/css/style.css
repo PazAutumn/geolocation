@@ -4,8 +4,8 @@ div#map {
   background-color: orange;
 }
 
-#encuentrame {
-	width: 20%;
+#encuentrame, #trazar-ruta {
+	width: 10%;
 	height: auto;
 	background-color: #DEDEDE;
   font-weight: bold;
