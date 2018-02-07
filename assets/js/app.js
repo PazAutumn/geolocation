@@ -108,7 +108,7 @@ var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 })*/
 
 var error = function(error) {
-    alert('Tenemos un problema con encontrar tu ubicación');
+    alert('Tenemos un problema encontrando tu ubicación');
 }
 
 
